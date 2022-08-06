@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.D_navbar {
+  width: 100%;
+  z-index: 9999;
+  padding: 0.5rem 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.D_navbar .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.D_navbar .inner .logo h1 {
+  color: #25611D;
+  font-weight: 500;
+  font-size: 49px;
+}
+
+@media only screen and (max-width: 768px) {
+  .D_navbar .inner .logo h1 {
+    font-size: 25px;
+    z-index: 100;
+    position: relative;
+  }
+}
+
+.D_navbar .inner .links {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .D_navbar .inner .links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding-bottom: 4.5rem;
+    background-color: #ffffff;
+    overflow: auto;
+    z-index: 99;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    -webkit-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+}
+
+.D_navbar .inner .links.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.D_navbar .inner .links .navbar_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .D_navbar .inner .links .navbar_list {
+    display: block;
+    padding: 6rem 0 0;
+  }
+}
+
+.D_navbar .inner .links .navbar_list li {
+  padding: 0.2rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #25611D;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 0;
+  border-radius: 7px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.D_navbar .inner .links .navbar_list li:last-child {
+  margin-right: 0;
+}
+
+.D_navbar .inner .links .navbar_list li:hover {
+  color: #ffffff;
+  background-color: #25611D;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  .D_navbar .inner .links .navbar_list li {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 auto 1.5rem;
+    padding: 0.5rem 1rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: #0000009e;
+  }
+  .D_navbar .inner .links .navbar_list li:last-child {
+    margin-right: auto;
+  }
+  .D_navbar .inner .links .navbar_list li:hover {
+    font-weight: 700;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .D_navbar .inner .links .navbar_list li {
+    font-size: 21px;
+  }
+}
+
+.D_navbar .inner .links .l_quote {
+  margin: 0 auto;
+  font-size: 11px;
+  border-radius: 10px;
+  background-color: #25611D;
+  color: #ffffff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.3rem 0.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .D_navbar .inner .links .l_quote {
+    display: none;
+  }
+}
+
+.D_navbar .inner .hamburger {
+  z-index: 99;
+}
+
+@media only screen and (min-width: 992px) {
+  .D_navbar .inner .hamburger {
+    display: none;
+  }
+}
+
+.D_navbar .inner .hamburger .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines {
+  display: block;
+  height: 17px;
+  width: 32px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines .line {
+  display: block;
+  height: 3px;
+  width: 85%;
+  margin-left: auto;
+  border-radius: 10px;
+  background: #25611D;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines .line1 {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines .line2 {
+  width: 65%;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines .line3 {
+  width: 45%;
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines.active {
+  height: 21px;
+  right: -5px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines.active .line {
+  background: #25611D;
+}
+
+.D_navbar .inner .hamburger .hamburger_lines.active .line1 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.D_navbar .inner .hamburger .hamburger_lines.active .line2 {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+.D_navbar .inner .hamburger .hamburger_lines.active .line3 {
+  width: 85%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+/*# sourceMappingURL=Navbar.module.css.map */

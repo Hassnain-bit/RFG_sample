@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+$font-weight: (
+    "extraLight": 200,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+    "extrabold": 800,
+  );
+  
+  $primary-color: #25611D;
+  $white-color: #ffffff;
+  $dull-white: #f6f6f6;
+  $black-color: #000;
+  $grey-color: #888;
+
+  $ff-poppins: 'Poppins', sans-serif;
+  
+  $first-gs-heading-color: #ffffff;
+  $second-gs-heading-color: #00da5d;
+  
+  $theme-bg-color: #00da5d;
+  $button-g-bg-color: #00da5d;
+  $button-g-bg-hover-color: #00da5d;
+  
+  $nav-link-color: #ffffff;
+  $nav-link-hover-color: #00da5d;
+  
+  $first-gs-text-color: #c0c0c0;
+  $second-gs-text-color: #c0c0c0;
+  
+  
+  $second-theme-bg-color:#000024;
+  $theme-third-bg-color: #020243;
+  
+  $cards-bg-color: #010139;
+  
+  $cards-bg-hover-color: #00da5d;
+  
+  
+  
+  // -------------Break Points----------------------
+  // You can use  max breakpoints media queries or but you can use min breakpoints media queries
+  
+  $customLargeDesktop:1920px;
+  $desktop:1399px;
+  $laptop:1199px;
+  $tablet:991px;
+  $largeSizeMobiles:767px;
+  $mobile:575px;
+  $customMobileBp:450px;
+  
+  
+  // OR MIN
+  $customLargeDesktop:1400px;
+  $desktop:1200px;
+  $laptop:992px;
+  $tablet:768px;
+  $largeSizeMobiles:576px;
+  $customMobileBp:450px;
+  $customMobileBp:280px;
+
+
+  @mixin lg-max {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @mixin md-max {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @mixin sm-max {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+  
+  @mixin lg-min {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+  
+  
+   

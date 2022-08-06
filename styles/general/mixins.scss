@@ -1,0 +1,236 @@
+@import './variables.scss';
+// ------------  Mixins ---------------
+@font-face {
+  font-family: "Ethnocentric";
+  src: url(../../fonts/Ethnocentric/ethnocentric.otf);
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../../fonts/Poppins/Poppins.ttf);
+  font-display: block;
+}
+
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}
+
+@mixin firstGeneralHeading() {
+  // font-size: $firstGH;
+  font-size: 5rem;
+  color: $heading-text-color-first;
+  font-weight: weight(bold);
+  font-family: "Ethnocentric", sans-serif;
+  @include desktop() {
+    font-size: 4rem;
+  }
+
+  @include laptop() {
+    font-size: 3.8rem;
+  }
+  @include tablet() {
+  }
+  @include largeWidthSizeMobiles() {
+  }
+  @include mobile() {
+    font-size: 3rem;
+  }
+  @include customSmallBp() {
+  }
+}
+
+@mixin secondGeneralHeading() {
+  // font-size: $secondGH;
+  font-size: 5rem;
+  color: $heading-text-color-second;
+  font-weight: weight(bold);
+  font-family: "Ethnocentric", sans-serif;
+
+  @include desktop() {
+    font-size: 4rem;
+  }
+  @include laptop() {
+    font-size: 3.8rem;
+  }
+  @include tablet() {
+  }
+  @include largeWidthSizeMobiles() {
+  }
+  @include mobile() {
+    font-size: 3rem;
+  }
+  @include customSmallBp() {
+  }
+
+}
+
+@mixin menuLinks {
+  font-size: 2.2rem;
+  color: $menu-links-color;
+  font-weight: weight(medium);
+  font-family: "Poppins", sans-serif;
+}
+
+@mixin generalText() {
+  
+  font-size: 2.2rem;
+  color: $general-normalSize-text-color;
+  font-weight: weight(light);
+  font-family: "Poppins", sans-serif;
+  @include desktop() {
+    font-size: 2.1rem;
+  }
+  @include laptop() {
+  }
+  @include tablet() {
+  }
+  @include largeWidthSizeMobiles() {
+  }
+  @include mobile() {
+    font-size: 2rem;
+  }
+  @include customSmallBp() {
+    font-size: 1.8rem;
+  }
+}
+
+@mixin generalMedumSizeText() {
+  font-size: 2.5rem;
+  color: $general-normalSize-text-color;
+  font-weight: weight(medium);
+  font-family: "Poppins", sans-serif;
+
+  @include desktop() {
+    font-size: 2.265rem;
+  }
+
+  @include laptop() {
+  }
+  @include tablet() {
+  }
+  @include largeWidthSizeMobiles() {
+  }
+  @include mobile() {
+  }
+
+}
+
+@mixin flexCenterRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexRow($xAxis, $yAxis) {
+  display: flex;
+  justify-content: $xAxis;
+  align-items: $yAxis;
+}
+
+@mixin flexColumn($xAxis, $yAxis) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $xAxis;
+  align-items: $yAxis;
+}
+
+
+@mixin button {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 35px 12px 35px;
+  font-size: 2.7rem;
+  font-weight: map-get($font-weight, medium);
+  border: 2px solid $theme-green-color;
+  border-radius: 50px;
+  color: $theme-green-color;
+  transition-duration: 0.2s;
+  padding-bottom: 10px;
+  &:hover {
+    background-color: $button-hover-color;
+    color: $white-text;
+    box-shadow: 0px 5px 100px 5px #00da5dd6;
+    transition-duration: 0.4s;
+  }
+
+  @include desktop() {
+    padding: 8px 30px 10px 30px;
+  }
+
+  @include laptop() {
+    font-size: 2.1rem;
+  }
+
+  @include tablet() {
+  }
+
+  @include largeWidthSizeMobiles() {
+  }
+
+  @include mobile() {
+  }
+}
+
+
+@mixin GeneralbackgroundImage($Img, $imgHover, $Size) {
+  background-image: url($Img);
+  background-repeat: no-repeat;
+  background-size: $Size;
+  background-position: center center;
+  center &:hover {
+    background-image: url($imgHover);
+  }
+}
+
+@mixin card {
+  width: 350px;
+  height: 440px;
+  background-color: $cards-background-color;
+  transition-duration: 0.2s;
+  &:hover {
+    background-color: $cards-hover-color;
+    color: $white-text;
+  }
+}
+
+
+@mixin VerticalPadding($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+
+@mixin HorizontalPadding($right, $left) {
+  padding-right: $right;
+  padding-left: $left;
+}
+
+
+@mixin VerticalMargin($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+
+
+@mixin HorizontalMargin($right, $left) {
+  margin-right: $right;
+  margin-left: $left;
+}
+
+
+@mixin elementSize($width, $height) {
+  width: $width;
+  height: $height;
+}
+

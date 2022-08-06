@@ -1,0 +1,207 @@
+@import "../general/variables.scss";
+
+.D_navbar {
+  width: 100%;
+  z-index: 9999;
+  padding: 0.5rem 0;
+  background-color: $white-color;
+  transition: all 0.2s ease;
+
+  .inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    transition: all 0.2s ease;
+
+    // LOGO
+    .logo {
+      h1 {
+        color: $primary-color;
+        font-weight: 500;
+        font-size: 49px;
+
+        @include md-max {
+          font-size: 25px;
+          z-index: 100;
+          position: relative;
+        }
+      }
+    }
+
+    // LINKS
+    .links {
+      margin-left: auto;
+
+      @media only screen and (max-width: 768px) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        padding-bottom: 4.5rem;
+        background-color: $white-color;
+        overflow: auto;
+        z-index: 99;
+        transform: translateY(-100%);
+        transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      }
+
+      &.active {
+        transform: translateY(0);
+        transition: all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      }
+
+      .navbar_list {
+        display: flex;
+
+        @include md-max {
+          display: block;
+          padding: 6rem 0 0;
+        }
+
+        li {
+          padding: 0.2rem 1rem;
+          margin: 0 0.5rem;
+          font-size: 22px;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: $primary-color;
+          position: relative;
+          // overflow: hidden;
+          cursor: pointer;
+          letter-spacing: 0;
+          border-radius: 7px;
+          transition: all 0.4s ease;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:hover {
+            color: $white-color;
+            background-color: $primary-color;
+            transition: all 0.4s ease;
+          }
+
+          @include md-max {
+            font-size: 25px;
+            font-weight: 400;
+            margin: 0 auto 1.5rem;
+            padding: 0.5rem 1rem;
+            width: fit-content;
+            color: #0000009e;
+
+            &:last-child {
+              margin-right: auto;
+            }
+
+            &:hover {
+              font-weight: 700;
+            }
+          }
+
+          @include sm-max{
+            font-size: 21px;
+          }
+        }
+      }
+
+      .l_quote{
+        margin: 0 auto;
+        font-size: 11px;
+        border-radius: 10px;
+        background-color: $primary-color;
+        color: $white-color;
+        width: fit-content;
+        padding: 0.3rem 0.5rem;
+
+        @include lg-min{
+          display: none
+        }
+      }
+
+    }
+
+    // HAMBURGER
+    .hamburger {
+      z-index: 99;
+      @include lg-min {
+        display: none;
+      }
+
+      .checkbox {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 32px;
+        top: 20px;
+        right: 0;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .hamburger_lines {
+        display: block;
+        height: 17px;
+        width: 32px;
+        position: absolute;
+        top: 0.5rem;
+        right: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.4s ease-in-out;
+
+        .line {
+          display: block;
+          height: 3px;
+          width: 85%;
+          margin-left: auto;
+          border-radius: 10px;
+          background: $primary-color;
+        }
+
+        .line1 {
+          transform-origin: 0% 0%;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        .line2 {
+          width: 65%;
+          transition: transform 0.2s ease-in-out;
+        }
+
+        .line3 {
+          width: 45%;
+          transform-origin: 0% 100%;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        &.active {
+          height: 21px;
+          right: -5px;
+          transition: all 0.4s ease-in-out;
+
+          .line {
+            background: $primary-color;
+          }
+
+          .line1 {
+            transform: rotate(45deg);
+          }
+
+          .line2 {
+            transform: scaleY(0);
+          }
+
+          .line3 {
+            width: 85%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
