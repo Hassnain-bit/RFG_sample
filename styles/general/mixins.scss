@@ -1,16 +1,5 @@
-@import './variables.scss';
+@import "./variables.scss";
 // ------------  Mixins ---------------
-@font-face {
-  font-family: "Ethnocentric";
-  src: url(../../fonts/Ethnocentric/ethnocentric.otf);
-  font-display: block;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url(../../fonts/Poppins/Poppins.ttf);
-  font-display: block;
-}
 
 @function weight($weight-name) {
   @return map-get($font-weight, $weight-name);
@@ -21,7 +10,7 @@
   font-size: 5rem;
   color: $heading-text-color-first;
   font-weight: weight(bold);
-  font-family: "Ethnocentric", sans-serif;
+
   @include desktop() {
     font-size: 4rem;
   }
@@ -45,7 +34,6 @@
   font-size: 5rem;
   color: $heading-text-color-second;
   font-weight: weight(bold);
-  font-family: "Ethnocentric", sans-serif;
 
   @include desktop() {
     font-size: 4rem;
@@ -62,18 +50,90 @@
   }
   @include customSmallBp() {
   }
-
 }
 
 @mixin menuLinks {
-  font-size: 2.2rem;
-  color: $menu-links-color;
-  font-weight: weight(medium);
-  font-family: "Poppins", sans-serif;
+  @include VerticalPadding(0.2rem, 0.2rem);
+  @include HorizontalPadding(1rem, 1rem);
+  @include HorizontalMargin(0.5rem, 0.5rem);
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $primary-color;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 0;
+  border-radius: 7px;
+  transition: all 0.4s ease;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: $white-color;
+    background-color: $primary-color;
+    transition: all 0.4s ease;
+  }
+
+  @include tablet() {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 auto 1.5rem;
+    @include VerticalPadding(0.5rem, 0.5rem);
+    @include HorizontalPadding(1rem, 1rem);
+    width: fit-content;
+    color: #0000009e;
+
+    &:last-child {
+      margin-right: auto;
+    }
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+
+  @include mobile() {
+    font-size: 21px;
+  }
 }
 
-@mixin generalText() {
-  
+@mixin carouselHeading(){
+    font-size: 50px;
+    font-weight: weight(bold);
+    color: $white-color;
+    line-height: 65px;
+
+    @include tablet{
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    @include mobile{
+        font-size: 19px;
+        line-height: 22px
+    }
+}
+
+@mixin carouselSubHeading(){
+    font-size: 22px;
+    font-weight: weight(light);
+    color: $white-color;
+    line-height: 27px;
+    margin-top: 24px;
+
+    @include tablet{
+        font-size: 20px;
+    }
+
+    @include mobile{
+        font-size: 11px;
+        line-height: 17px
+    }
+}
+
+@mixin firstGSRegularText() {
   font-size: 2.2rem;
   color: $general-normalSize-text-color;
   font-weight: weight(light);
@@ -95,7 +155,7 @@
   }
 }
 
-@mixin generalMedumSizeText() {
+@mixin secondGSRegularText() {
   font-size: 2.5rem;
   color: $general-normalSize-text-color;
   font-weight: weight(medium);
@@ -113,7 +173,6 @@
   }
   @include mobile() {
   }
-
 }
 
 @mixin flexCenterRow {
@@ -142,46 +201,26 @@
   align-items: $yAxis;
 }
 
-
-@mixin button {
+@mixin button($fontSize,$padding) {
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  padding: 10px 35px 12px 35px;
-  font-size: 2.7rem;
+  background-color: $primary-color;
+  border-color: transparent;
+  box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+  font-size: $fontSize;
   font-weight: map-get($font-weight, medium);
-  border: 2px solid $theme-green-color;
-  border-radius: 50px;
-  color: $theme-green-color;
+  border-radius: 10px;
+  color: $white-color;
+  padding: $padding;
   transition-duration: 0.2s;
-  padding-bottom: 10px;
   &:hover {
-    background-color: $button-hover-color;
-    color: $white-text;
-    box-shadow: 0px 5px 100px 5px #00da5dd6;
-    transition-duration: 0.4s;
+    box-shadow: 0px 3px 8px  rgb(0 0 0 / 30%);
+    transition-duration: 0.3s;
   }
 
-  @include desktop() {
-    padding: 8px 30px 10px 30px;
-  }
-
-  @include laptop() {
-    font-size: 2.1rem;
-  }
-
-  @include tablet() {
-  }
-
-  @include largeWidthSizeMobiles() {
-  }
-
-  @include mobile() {
-  }
 }
-
 
 @mixin GeneralbackgroundImage($Img, $imgHover, $Size) {
   background-image: url($Img);
@@ -204,33 +243,27 @@
   }
 }
 
-
 @mixin VerticalPadding($top, $bottom) {
   padding-top: $top;
   padding-bottom: $bottom;
 }
-
 
 @mixin HorizontalPadding($right, $left) {
   padding-right: $right;
   padding-left: $left;
 }
 
-
 @mixin VerticalMargin($top, $bottom) {
   margin-top: $top;
   margin-bottom: $bottom;
 }
-
 
 @mixin HorizontalMargin($right, $left) {
   margin-right: $right;
   margin-left: $left;
 }
 
-
 @mixin elementSize($width, $height) {
   width: $width;
   height: $height;
 }
-

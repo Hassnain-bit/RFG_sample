@@ -1,0 +1,49 @@
+@import "../general/variables.scss";
+@import "../general/mixins.scss";
+
+.react-multi-carousel-list {
+  // ARROWS
+  .react-multiple-carousel__arrow {
+    background-color: hsla(0, 0%, 0%, 0.2);
+    z-index: 1;
+
+    @include tablet {
+      background-color: rgb(37 97 29 / 46%);
+    }
+
+    &:hover {
+      background-color: rgb(37 97 29 / 46%);
+    }
+
+    &.react-multiple-carousel__arrow--left{
+      @include mobile {
+        left: calc(28% + 0px);
+        bottom: calc(10% + 0px);
+      }
+    }
+
+    &.react-multiple-carousel__arrow--right{
+      @include mobile {
+        right: calc(28% + 0px);
+        bottom: calc(10% + 0px);
+      }
+    }
+  }
+
+  //   DOTS
+  .react-multi-carousel-dot-list {
+    bottom: 1rem;
+    .react-multi-carousel-dot {
+      button {
+        background-color: $white-color;
+        border-color: $white-color;
+        margin: 0 3px;
+      }
+    }
+    .react-multi-carousel-dot--active {
+      button {
+        background-color: $primary-color;
+      }
+    }
+  }
+}

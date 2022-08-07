@@ -1,13 +1,48 @@
 import React from "react";
 import { useState } from "react";
-import styles from "../../styles/Navbar/Navbar.module.css";
+import styles from "../../styles/Navbar.module.scss";
+import logo from '../../public/images/logo.png'
 
 function Navbar() {
   // OPEN SIDEBAR
   const [openNav, setOpenNav] = useState(false);
 
+  const TopDetail = (props) => {
+    return (
+      <div className={styles.tdl_item}>
+        <h6>{props.title}</h6>
+        <span>{props.detail}</span>
+      </div>
+    );
+  };
+
   return (
     <>
+      <div className={styles.top_details}>
+        <div className="container" style={{ height: "100%" }}>
+          <div className={styles.td_inner}>
+            <div className={styles.td_left}>
+              <TopDetail
+                title={"Address"}
+                detail={"International City, Dubai"}
+              />
+              <TopDetail
+                title={"Email Us"}
+                detail={"Support@rfglogistics.ae"}
+              />
+              <TopDetail title={"Phone Number"} detail={"+971 50 0000 001"} />
+            </div>
+            <div>
+              <div className={styles.td_right}>
+                <button type="button" className="btn">
+                  Request a Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* NAVBAR */}
       <nav className={styles.D_navbar}>
         <div className="container" style={{ height: "100%" }}>

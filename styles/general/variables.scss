@@ -64,29 +64,25 @@ $font-weight: (
   $customMobileBp:280px;
 
 
-  @mixin lg-max {
+  @mixin tablet {
     @media only screen and (max-width: 992px) {
       @content;
     }
   }
 
-  @mixin md-max {
-    @media only screen and (max-width: 768px) {
-      @content;
-    }
-  }
-
-  @mixin sm-max {
+  @mixin mobile {
     @media only screen and (max-width: 576px) {
       @content;
     }
   }
-  
-  @mixin lg-min {
+
+  @mixin tablet-min {
     @media only screen and (min-width: 992px) {
       @content;
     }
   }
+  
+  
   
   
    

@@ -1,10 +1,11 @@
 import Navbar from "../components/Common/Navbar";
+import Header from "../components/Homepage/Header";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="container" style={{marginTop:"4rem"}}><h1>Hello World!</h1></div>
+      <Header />
     </>
   );
 }
