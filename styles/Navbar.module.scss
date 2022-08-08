@@ -140,8 +140,7 @@
 
         display: none !important;
         @include button(11px, 0.375rem 0.75rem);
-        margin-left: auto;
-        margin-right: 3rem;
+        @include HorizontalMargin(3rem, auto);
 
         @include tablet{
           display: flex !important;
