@@ -70,7 +70,7 @@
     margin-right: 0;
   }
 
-  &:hover {
+  &.active {
     color: $white-color;
     background-color: $primary-color;
     transition: all 0.4s ease;
@@ -89,8 +89,8 @@
       margin-right: auto;
     }
 
-    &:hover {
-      font-weight: 700;
+    &.active {
+      font-weight: weight(semiBold);
     }
   }
 
@@ -99,38 +99,38 @@
   }
 }
 
-@mixin carouselHeading(){
-    font-size: 50px;
-    font-weight: weight(bold);
-    color: $white-color;
-    line-height: 65px;
+@mixin carouselHeading() {
+  font-size: 50px;
+  font-weight: weight(bold);
+  color: $white-color;
+  line-height: 65px;
 
-    @include tablet{
-        font-size: 40px;
-        line-height: 44px;
-    }
+  @include tablet {
+    font-size: 40px;
+    line-height: 44px;
+  }
 
-    @include mobile{
-        font-size: 19px;
-        line-height: 22px
-    }
+  @include mobile {
+    font-size: 19px;
+    line-height: 22px;
+  }
 }
 
-@mixin carouselSubHeading(){
-    font-size: 22px;
-    font-weight: weight(light);
-    color: $white-color;
-    line-height: 27px;
-    margin-top: 24px;
+@mixin carouselSubHeading() {
+  font-size: 22px;
+  font-weight: weight(light);
+  color: $white-color;
+  line-height: 27px;
+  margin-top: 24px;
 
-    @include tablet{
-        font-size: 20px;
-    }
+  @include tablet {
+    font-size: 20px;
+  }
 
-    @include mobile{
-        font-size: 11px;
-        line-height: 17px
-    }
+  @include mobile {
+    font-size: 11px;
+    line-height: 17px;
+  }
 }
 
 @mixin firstGSRegularText() {
@@ -201,7 +201,7 @@
   align-items: $yAxis;
 }
 
-@mixin button($fontSize,$padding) {
+@mixin button($fontSize, $padding) {
   width: auto;
   display: flex;
   justify-content: center;
@@ -216,10 +216,9 @@
   padding: $padding;
   transition-duration: 0.2s;
   &:hover {
-    box-shadow: 0px 3px 8px  rgb(0 0 0 / 30%);
+    box-shadow: 0px 3px 8px rgb(0 0 0 / 30%);
     transition-duration: 0.3s;
   }
-
 }
 
 @mixin GeneralbackgroundImage($Img, $imgHover, $Size) {

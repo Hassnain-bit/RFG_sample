@@ -7,6 +7,7 @@ $font-weight: (
     "light": 300,
     "regular": 400,
     "medium": 500,
+    "semiBold": 600,
     "bold": 700,
     "extrabold": 800,
   );
@@ -78,6 +79,12 @@ $font-weight: (
 
   @mixin tablet-min {
     @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @mixin desktop-min {
+    @media only screen and (min-width: 1200px) {
       @content;
     }
   }

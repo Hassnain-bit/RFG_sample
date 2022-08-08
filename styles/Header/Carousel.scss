@@ -7,22 +7,23 @@
     background-color: hsla(0, 0%, 0%, 0.2);
     z-index: 1;
 
-    @include tablet {
-      background-color: rgb(37 97 29 / 46%);
-    }
-
     &:hover {
       background-color: rgb(37 97 29 / 46%);
     }
 
-    &.react-multiple-carousel__arrow--left{
+    @include mobile {
+      min-width: 33px;
+      min-height: 33px;
+    }
+
+    &.react-multiple-carousel__arrow--left {
       @include mobile {
         left: calc(28% + 0px);
         bottom: calc(10% + 0px);
       }
     }
 
-    &.react-multiple-carousel__arrow--right{
+    &.react-multiple-carousel__arrow--right {
       @include mobile {
         right: calc(28% + 0px);
         bottom: calc(10% + 0px);

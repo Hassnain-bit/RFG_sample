@@ -1,4 +1,5 @@
 @import './general/variables.scss';
+@import './general/mixins.scss';
 
 html,
 body {
@@ -65,4 +66,10 @@ img {
 input,
 textarea:focus {
   outline: none;
+}
+
+.container{
+  @include desktop-min{
+    max-width: 1230px;
+  }
 }

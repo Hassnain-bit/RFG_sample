@@ -1,0 +1,33 @@
+@import "./general/variables.scss";
+@import "./general/mixins.scss";
+
+.heading {
+    text-align: center;
+    h6 {
+      font-size: 20px;
+      font-weight: weight(medium);
+      color: #a7a7a7;
+
+      @include tablet {
+        font-size: 12px;
+      }
+
+      @include mobile {
+        font-size: 8px;
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: weight(bold);
+      color: $primary-color;
+
+      @include tablet {
+        font-size: 36px;
+      }
+
+      @include mobile {
+        font-size: 32px;
+      }
+    }
+  }

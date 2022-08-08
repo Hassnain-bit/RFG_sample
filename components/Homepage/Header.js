@@ -25,13 +25,13 @@ function Header() {
     },
   };
 
-  const CarouselItem = () => {
+  const CarouselItem = (props) => {
     return (
       <div className={styles.c_item}>
         <div className={styles.ci_wrapper}></div>
         <Image
-          alt="truck-img"
-          src="/../public/images/carousal_img_1.png"
+          alt="carousel-img"
+          src={props.image}
           layout="fill"
           objectFit="cover"
           quality={100}
@@ -60,9 +60,9 @@ function Header() {
           infinite={true}
           showDots={true}
         >
-          <CarouselItem/>
-          <CarouselItem/>
-          <CarouselItem/>
+          <CarouselItem image={"/../public/images/carousal_img_1.png"}/>
+          <CarouselItem image={"/../public/images/carousal_img_2.png"}/>
+          <CarouselItem image={"/../public/images/carousal_img_3.png"}/>
         </Carousel>
       </div>
     </>
