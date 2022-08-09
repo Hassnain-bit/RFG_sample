@@ -42,7 +42,7 @@
           height: 450px;
         }
         @include mobile {
-          height: 420px;
+          height: auto;
         }
 
         h5 {

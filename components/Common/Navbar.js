@@ -38,6 +38,9 @@ function Navbar() {
               <div>
                 <div className={styles.td_right}>
                   <button type="button" className="btn">
+                    Dropdown
+                  </button>
+                  <button type="button" className="btn">
                     Request a Quote
                   </button>
                 </div>
@@ -86,9 +89,14 @@ function Navbar() {
                 <div className={styles.l_quote}>Request Quote</div>
               </div>
 
-              <button type="button" className="btn">
-                Request a Quote
-              </button>
+              <div className={styles.buttons}>
+                <button type="button" className="btn">
+                  Dropdown
+                </button>
+                <button type="button" className="btn">
+                  Request a Quote
+                </button>
+              </div>
 
               {/* HAMBURGER */}
               <div

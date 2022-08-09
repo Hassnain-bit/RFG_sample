@@ -221,14 +221,10 @@
   }
 }
 
-@mixin GeneralbackgroundImage($Img, $imgHover, $Size) {
-  background-image: url($Img);
-  background-repeat: no-repeat;
+@mixin GeneralbackgroundImage($Repeat, $Size, $xAxisPos, $yAxisPos) {
+  background-repeat: $Repeat;
   background-size: $Size;
-  background-position: center center;
-  center &:hover {
-    background-image: url($imgHover);
-  }
+  background-position: $xAxisPos $yAxisPos;
 }
 
 @mixin card {
@@ -266,3 +262,4 @@
   width: $width;
   height: $height;
 }
+

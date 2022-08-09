@@ -1,0 +1,28 @@
+@import "./general/variables.scss";
+@import "./general/mixins.scss";
+
+
+.quote{
+    background-image: url(../public/images/quote_form_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: currentcolor;
+    height: 100vh;
+    padding-top: 86px;
+
+    form{
+        width: 543px;
+        background-color: $white-color;
+        border-radius: 20px;
+        box-shadow: 0px 10px 12px rgb(0 0 0 / 16%);
+
+        @include tablet{
+            width: 363px;
+            margin: 0 auto;
+        }
+
+        @include mobile{
+            width: 276px;
+        }
+    }
+}

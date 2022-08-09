@@ -1,0 +1,143 @@
+@import "./general/variables.scss";
+@import "./general/mixins.scss";
+
+.special {
+  @include VerticalPadding(85px, 0);
+  background-image: url(../public/images/wave_bg.png);
+  @include GeneralbackgroundImage(
+    no-repeat,
+    auto,
+    80%,
+    340%
+  );
+  overflow: hidden;
+
+  @include tablet {
+    background-image: url(../public/images/wave_bg_tablet.png);
+    background-position-x: 17%;
+    background-position-y: 158%;
+  }
+
+  @include mobile {
+    background-position-x: 40%;
+    background-position-y: 119%;
+  }
+
+  .s_inner {
+    display: flex;
+
+    @include mobile {
+      justify-content: center;
+    }
+
+    .s_img_holder {
+      width: 307px;
+      align-self: end;
+
+      @include tablet {
+        width: 237px;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      .s_men_img {
+        width: 307px;
+        align-self: end;
+
+        @include tablet {
+          width: 237px;
+        }
+      }
+    }
+
+    .s_content {
+      @include VerticalMargin(80px, 86px);
+      margin-left: 3.5rem;
+      width: 69%;
+
+      @include tablet {
+        @include VerticalMargin(98px, 70px);
+        margin-left: 7px;
+      }
+
+      @include mobile {
+        @include VerticalMargin(34px, 54px);
+        margin-left: unset;
+      }
+
+      .custom_row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 74px;
+
+        @include mobile {
+          --bs-gutter-x: 0;
+          --bs-gutter-y: 40px;
+        }
+
+        .sc_item {
+          display: flex;
+          grid-gap: 13px;
+          max-width: 347px;
+
+          @include mobile {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          .sc_icon_holder {
+            @include elementSize(56px, 56px);
+            @include HorizontalPadding(29px, 29px);
+            background-color: $white-color;
+            border-radius: 100%;
+            position: relative;
+            box-shadow: 0 3px 10px rgb(37 97 29 / 16%);
+
+            @include tablet {
+              @include elementSize(45px, 45px);
+              @include VerticalPadding(22px, 22px);
+              @include HorizontalPadding(23px, 23px);
+            }
+
+            .sc_icon {
+              position: absolute;
+              left: 50%;
+              top: 57%;
+              transform: translate(-50%, -50%);
+
+              span {
+                @include tablet {
+                  @include elementSize(24px !important, 24px !important);
+                }
+              }
+            }
+          }
+
+          .sc_text {
+            h6 {
+              color: $black-color;
+              font-size: 22px;
+              font-weight: weight(semiBold);
+
+              @include tablet {
+                font-size: 15px;
+              }
+            }
+
+            p {
+              line-height: 20px;
+              margin-top: 8px;
+
+              @include tablet {
+                font-size: 12px;
+                margin-top: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

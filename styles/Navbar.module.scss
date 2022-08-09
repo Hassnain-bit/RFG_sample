@@ -45,9 +45,21 @@
 
       // RIGHT
       .td_right {
+        @include flexCenterRow;
+        grid-gap: 25px;
+
         button {
-          @include button(14px, 0.375rem 0.75rem);
-          border: 1px solid $white-color;
+          &:first-child {
+            @include button(14px, 0.375rem 0.75rem);
+            border: 1px solid $primary-color;
+            background-color: $white-color;
+            color: $black-color;
+          }
+
+          &:last-child {
+            @include button(14px, 0.375rem 0.75rem);
+            border: 1px solid $white-color;
+          }
         }
       }
     }
@@ -136,18 +148,31 @@
       }
 
       // QUOTE BUTTON
-      button {
-
-        display: none !important;
-        @include button(11px, 0.375rem 0.75rem);
+      .buttons {
+        display: none;
         @include HorizontalMargin(3rem, auto);
+        z-index: 100;
 
-        @include tablet{
-          display: flex !important;
+        @include tablet {
+          @include flexCenterRow;
+          grid-gap: 25px;
         }
 
-        @include mobile{
-          display: none !important;
+        button {
+          &:first-child {
+            @include button(14px, 0.375rem 0.75rem);
+            border: 1px solid $primary-color;
+            background-color: $white-color;
+            color: $black-color;
+          }
+
+          &:last-child {
+            @include button(14px, 0.375rem 0.75rem);
+
+            @include mobile {
+              display: none;
+            }
+          }
         }
       }
 
