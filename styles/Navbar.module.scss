@@ -6,6 +6,7 @@
 
   // TOP DETAILS
   .top_details {
+    @include sectionHorizontalSpace;
     @include VerticalPadding(0.7rem, 0.7rem);
     background-color: #f7f7f7;
 
@@ -18,7 +19,7 @@
       // LEFT
       .td_left {
         display: flex;
-        grid-gap: 2rem;
+        grid-gap: 37px;
 
         .tdl_item {
           display: flex;
@@ -27,14 +28,16 @@
 
           h6,
           a {
+            font-size: 16px;
             line-height: 25px;
           }
 
           h6 {
-            font-weight: 600;
+            font-weight: weight(semiBold);
           }
 
           a {
+            font-weight: weight(light);
             cursor: pointer;
             &:hover {
               text-decoration: underline;
@@ -46,20 +49,27 @@
       // RIGHT
       .td_right {
         @include flexCenterRow;
-        grid-gap: 25px;
+        grid-gap: 27px;
+
+        select {
+          border-radius: 7px;
+          padding: 3px 40px 3px 21px;
+          font-size: 14px;
+          font-weight: 500;
+          height: 40px;
+          border: 1px solid $primary-color;
+          box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+
+          &:focus {
+            box-shadow: 0px 3px 8px rgb(0 0 0 / 30%);
+          }
+        }
 
         button {
-          &:first-child {
-            @include button(14px, 0.375rem 0.75rem);
-            border: 1px solid $primary-color;
-            background-color: $white-color;
-            color: $black-color;
-          }
-
-          &:last-child {
-            @include button(14px, 0.375rem 0.75rem);
-            border: 1px solid $white-color;
-          }
+          @include button(14px, 10px 21px);
+          border: 1px solid $white-color;
+          font-weight: weight(semiBold);
+          min-inline-size: max-content;
         }
       }
     }
@@ -67,6 +77,7 @@
 
   // NAVBAR
   .D_navbar {
+    @include sectionHorizontalSpace;
     @include VerticalPadding(0.5rem, 0.5rem);
     width: 100%;
     z-index: 9999;
@@ -85,10 +96,12 @@
           color: $primary-color;
           font-weight: 500;
           font-size: 49px;
+          line-height: 73px;
 
           @include tablet {
             font-size: 25px;
             z-index: 100;
+            line-height: 38px;
             position: relative;
           }
         }
@@ -103,7 +116,7 @@
           top: 0;
           right: 0;
           width: 100%;
-          padding-bottom: 4.5rem;
+          padding-bottom: 89px;
           background-color: $white-color;
           overflow: auto;
           z-index: 99;
@@ -135,6 +148,7 @@
           @include VerticalPadding(0.3rem, 0.3rem);
           @include HorizontalPadding(0.5rem, 0.5rem);
           font-size: 11px;
+          font-weight: weight(medium);
           border-radius: 10px;
           background-color: $primary-color;
           color: $white-color;
@@ -158,20 +172,27 @@
           grid-gap: 25px;
         }
 
-        button {
-          &:first-child {
-            @include button(14px, 0.375rem 0.75rem);
-            border: 1px solid $primary-color;
-            background-color: $white-color;
-            color: $black-color;
+
+        select {
+          border-radius: 7px;
+          padding: 3px 40px 3px 21px;
+          font-size: 14px;
+          font-weight: 500;
+          height: 35px;
+          border: 1px solid $primary-color;
+          box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+
+          &:focus {
+            box-shadow: 0px 3px 8px rgb(0 0 0 / 30%);
           }
+        }
 
-          &:last-child {
-            @include button(14px, 0.375rem 0.75rem);
+        button {
+          @include button(14px, 0.375rem 0.75rem);
+          min-inline-size: max-content;
 
-            @include mobile {
-              display: none;
-            }
+          @include mobile {
+            display: none;
           }
         }
       }

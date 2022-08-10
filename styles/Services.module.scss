@@ -2,11 +2,16 @@
 @import "./general/mixins.scss";
 
 .services {
+  @include sectionHorizontalSpace;
   background-color: rgb(30 255 0 / 06%);
   @include VerticalPadding(85px, 60px);
 
   .services_cards {
     margin-top: 85px;
+
+    @include mobile {
+      margin-top: 62px;
+    }
 
     .custom_row {
       justify-content: center;
@@ -14,12 +19,12 @@
       --bs-gutter-y: 0;
 
       @include tablet {
-        --bs-gutter-x: 73px;
-        --bs-gutter-y: 73px;
+        --bs-gutter-x: 58px;
+        --bs-gutter-y: 45px;
       }
       @include mobile {
         --bs-gutter-x: 0;
-        --bs-gutter-y: 68px;
+        --bs-gutter-y: 50px;
       }
 
       .sc_item {
@@ -39,10 +44,21 @@
         }
 
         @include tablet {
-          height: 450px;
+          height: 480px;
         }
         @include mobile {
           height: auto;
+        }
+
+        // ICON
+        span {
+          @include tablet {
+            @include elementSize(80px !important, 80px !important);
+          }
+
+          @include mobile {
+            @include elementSize(70px !important, 70px !important);
+          }
         }
 
         h5 {
@@ -51,21 +67,26 @@
           line-height: 53px;
 
           @include tablet {
-            font-size: 30px;
-            line-height: 46px;
+            font-size: 26px;
+            line-height: 39px;
+          }
+
+          @include mobile {
+            font-size: 24px;
+            line-height: 35px;
           }
         }
 
         p {
+          @include firstGSRegularText;
           margin-top: 26px;
-          font-size: 16px;
           line-height: 30px;
-          color: rgb(0 0 0 / 54%);
 
           @include tablet {
-            font-size: 13px;
+            margin-top: 13px;
             line-height: 25px;
           }
+
 
           span {
             margin-left: 5px;

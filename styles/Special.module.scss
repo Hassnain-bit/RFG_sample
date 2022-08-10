@@ -2,6 +2,7 @@
 @import "./general/mixins.scss";
 
 .special {
+  @include sectionHorizontalSpace;
   @include VerticalPadding(85px, 0);
   background-image: url(../public/images/wave_bg.png);
   @include GeneralbackgroundImage(
@@ -14,17 +15,18 @@
 
   @include tablet {
     background-image: url(../public/images/wave_bg_tablet.png);
-    background-position-x: 17%;
-    background-position-y: 158%;
+    background-position-x: 24%;
+    background-position-y: 123%;
   }
 
   @include mobile {
-    background-position-x: 40%;
-    background-position-y: 119%;
+    background-position-x: 46%;
+    background-position-y: 121%;
   }
 
   .s_inner {
     display: flex;
+    justify-content: space-between;
 
     @include mobile {
       justify-content: center;
@@ -53,27 +55,33 @@
     }
 
     .s_content {
-      @include VerticalMargin(80px, 86px);
+      @include VerticalMargin(92px, 86px);
       margin-left: 3.5rem;
       width: 69%;
 
       @include tablet {
-        @include VerticalMargin(98px, 70px);
+        @include VerticalMargin(90px, 70px);
         margin-left: 7px;
       }
 
       @include mobile {
-        @include VerticalMargin(34px, 54px);
+        @include VerticalMargin(70px, 54px);
         margin-left: unset;
+        width: unset;
       }
 
       .custom_row {
-        --bs-gutter-x: 1.5rem;
+        --bs-gutter-x: 113px;
         --bs-gutter-y: 74px;
+
+        @include tablet{
+          --bs-gutter-x: 34px;
+          --bs-gutter-y: 40px;
+        }
 
         @include mobile {
           --bs-gutter-x: 0;
-          --bs-gutter-y: 40px;
+          --bs-gutter-y: 45px;
         }
 
         .sc_item {
@@ -82,9 +90,11 @@
           max-width: 347px;
 
           @include mobile {
+            grid-gap: 9px;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            max-width: unset;
           }
 
           .sc_icon_holder {
@@ -122,17 +132,24 @@
               font-weight: weight(semiBold);
 
               @include tablet {
-                font-size: 15px;
+                font-size: 20px;
               }
             }
 
             p {
+              @include firstGSRegularText;
               line-height: 20px;
               margin-top: 8px;
 
               @include tablet {
-                font-size: 12px;
-                margin-top: 2px;
+                // font-size: 12px;
+                margin-top: 3px;
+                line-height: 25px;
+              }
+
+              @include mobile{
+                margin-top: 10px;
+                line-height: 20px;
               }
             }
           }

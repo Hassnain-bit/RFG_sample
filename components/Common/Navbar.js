@@ -37,9 +37,12 @@ function Navbar() {
               </div>
               <div>
                 <div className={styles.td_right}>
-                  <button type="button" className="btn">
-                    Dropdown
-                  </button>
+                  <select class="form-select">
+                    <option selected>English</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
                   <button type="button" className="btn">
                     Request a Quote
                   </button>
@@ -90,9 +93,12 @@ function Navbar() {
               </div>
 
               <div className={styles.buttons}>
-                <button type="button" className="btn">
-                  Dropdown
-                </button>
+                <select class="form-select">
+                  <option selected>English</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
                 <button type="button" className="btn">
                   Request a Quote
                 </button>

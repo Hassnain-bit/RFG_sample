@@ -1,28 +1,77 @@
 @import "./general/variables.scss";
 @import "./general/mixins.scss";
 
+.quote {
+  @include sectionHorizontalSpace;
+  background-image: url(../public/images/quote_form_bg.png);
+  background-color: currentcolor;
+  @include GeneralbackgroundImage(no-repeat, cover, center, center);
+  @include VerticalPadding(86px, 73px);
 
-.quote{
-    background-image: url(../public/images/quote_form_bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: currentcolor;
-    height: 100vh;
-    padding-top: 86px;
+  @include tablet {
+    @include VerticalPadding(55px, 45px);
+  }
 
-    form{
-        width: 543px;
-        background-color: $white-color;
-        border-radius: 20px;
-        box-shadow: 0px 10px 12px rgb(0 0 0 / 16%);
+  @include mobile {
+    @include VerticalPadding(77px, 68px);
+  }
 
-        @include tablet{
-            width: 363px;
-            margin: 0 auto;
-        }
+  .form_holder {
+    width: 543px;
+    background-color: $white-color;
+    border-radius: 20px;
+    box-shadow: 0px 10px 12px rgb(0 0 0 / 16%);
+    @include VerticalPadding(34px, 30px);
+    @include HorizontalPadding(52px, 52px);
 
-        @include mobile{
-            width: 276px;
-        }
+    @include tablet {
+      width: 363px;
+      @include VerticalPadding(24px, 20px);
+      @include HorizontalPadding(32px, 32px);
+      margin: 0 auto;
     }
+
+    @include mobile {
+      width: 276px;
+      @include VerticalPadding(16px, 16px);
+      @include HorizontalPadding(26px, 26px);
+    }
+
+    form {
+      margin-top: 22px;
+
+      @include tablet {
+        margin-top: 17px;
+      }
+
+      @include mobile {
+        margin-top: 13px;
+      }
+
+      input {
+        @include input;
+      }
+
+      select {
+        @include select;
+      }
+
+      textarea {
+        @include textArea;
+      }
+
+      button {
+        @include button(20px, 0.375rem 1.3rem);
+        margin: 0 auto;
+
+        @include tablet {
+          font-size: 12px;
+        }
+
+        @include mobile {
+          font-size: 9px;
+        }
+      }
+    }
+  }
 }

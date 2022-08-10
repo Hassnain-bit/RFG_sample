@@ -6,58 +6,40 @@
 }
 
 @mixin firstGeneralHeading() {
-  // font-size: $firstGH;
-  font-size: 5rem;
-  color: $heading-text-color-first;
-  font-weight: weight(bold);
+  font-size: 20px;
+  color: $first-gs-Heading-color;
+  font-weight: weight(medium);
 
-  @include desktop() {
-    font-size: 4rem;
-  }
-
-  @include laptop() {
-    font-size: 3.8rem;
-  }
   @include tablet() {
+    font-size: 16px;
   }
-  @include largeWidthSizeMobiles() {
-  }
+
   @include mobile() {
-    font-size: 3rem;
-  }
-  @include customSmallBp() {
+    font-size: 13px;
   }
 }
 
 @mixin secondGeneralHeading() {
-  // font-size: $secondGH;
-  font-size: 5rem;
-  color: $heading-text-color-second;
+  font-size: 40px;
+  color: $second-gs-Heading-color;
   font-weight: weight(bold);
 
-  @include desktop() {
-    font-size: 4rem;
-  }
-  @include laptop() {
-    font-size: 3.8rem;
-  }
   @include tablet() {
+    font-size: 36px;
   }
-  @include largeWidthSizeMobiles() {
-  }
+
   @include mobile() {
-    font-size: 3rem;
-  }
-  @include customSmallBp() {
+    font-size: 32px;
   }
 }
 
 @mixin menuLinks {
-  @include VerticalPadding(0.2rem, 0.2rem);
-  @include HorizontalPadding(1rem, 1rem);
-  @include HorizontalMargin(0.5rem, 0.5rem);
+  @include VerticalPadding(0.3rem, 0.3rem);
+  @include HorizontalPadding(18px, 18px);
+  @include HorizontalMargin(30px,0px);
   font-size: 22px;
-  font-weight: 500;
+  font-weight: weight(medium);
+  line-height: 33px;
   text-transform: uppercase;
   color: $primary-color;
   position: relative;
@@ -78,8 +60,9 @@
 
   @include tablet() {
     font-size: 25px;
-    font-weight: 400;
-    margin: 0 auto 1.5rem;
+    font-weight: weight(regular);
+    line-height: 38px;
+    margin: 0 auto 70px;
     @include VerticalPadding(0.5rem, 0.5rem);
     @include HorizontalPadding(1rem, 1rem);
     width: fit-content;
@@ -96,6 +79,8 @@
 
   @include mobile() {
     font-size: 21px;
+    line-height: 31px;
+    margin-bottom: 24px;
   }
 }
 
@@ -107,51 +92,45 @@
 
   @include tablet {
     font-size: 40px;
-    line-height: 44px;
+    line-height: 60px;
   }
 
   @include mobile {
-    font-size: 19px;
-    line-height: 22px;
+    font-size: 30px;
+    line-height: 33px;
   }
 }
 
 @mixin carouselSubHeading() {
   font-size: 22px;
-  font-weight: weight(light);
+  font-weight: weight(regular);
   color: $white-color;
-  line-height: 27px;
-  margin-top: 24px;
+  line-height: 33px;
+  margin-top: 20px;
 
   @include tablet {
     font-size: 20px;
+    color: #E1DCDC;
+    line-height: 44px;
+    margin-top: 28px;
   }
 
   @include mobile {
-    font-size: 11px;
-    line-height: 17px;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 16px;
   }
 }
 
+
+
 @mixin firstGSRegularText() {
-  font-size: 2.2rem;
-  color: $general-normalSize-text-color;
+  font-size: 18px;
+  color: $first-gs-text-color;
   font-weight: weight(light);
-  font-family: "Poppins", sans-serif;
-  @include desktop() {
-    font-size: 2.1rem;
-  }
-  @include laptop() {
-  }
-  @include tablet() {
-  }
-  @include largeWidthSizeMobiles() {
-  }
+
   @include mobile() {
-    font-size: 2rem;
-  }
-  @include customSmallBp() {
-    font-size: 1.8rem;
+    font-size: 16px;
   }
 }
 
@@ -172,6 +151,21 @@
   @include largeWidthSizeMobiles() {
   }
   @include mobile() {
+  }
+}
+
+@mixin sectionHorizontalSpace() {
+  max-width: 2000px;
+  margin: 0 auto;
+  @include HorizontalPadding(37px, 37px);
+  
+
+  @include tablet {
+    @include HorizontalPadding(26px, 26px);
+  }
+
+  @include mobile {
+    @include HorizontalPadding(15px, 15px);
   }
 }
 
@@ -221,6 +215,98 @@
   }
 }
 
+@mixin input {
+  height: 55px;
+  border-radius: 10px;
+  margin-bottom: 27px;
+  @include VerticalPadding(18px, 18px);
+  @include HorizontalPadding(24px, 24px);
+  border: 1px solid $primary-color;
+  line-height: 84px;
+  font-size: 22px;
+  font-weight: weight(light);
+
+
+  &::placeholder {
+    color: #a7a7a7;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  @include tablet {
+    height: 38px;
+    margin-bottom: 17px;
+    @include HorizontalPadding(14px, 14px);
+    font-size: 17px;
+  }
+
+  @include mobile {
+    height: 29px;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+}
+
+@mixin select {
+  height: 55px;
+  border-radius: 10px;
+  margin-bottom: 27px;
+  @include VerticalPadding(0px, 0px);
+  @include HorizontalPadding(24px, 24px);
+  border: 1px solid $primary-color;
+  font-size: 22px;
+  font-weight: weight(light);
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  @include tablet {
+    height: 38px;
+    margin-bottom: 17px;
+    @include HorizontalPadding(14px, 14px);
+    font-size: 17px;
+  }
+
+  @include mobile {
+    height: 40px;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+}
+
+@mixin textArea {
+  border-radius: 10px;
+  margin-bottom: 27px;
+  @include VerticalPadding(12px, 12px);
+  @include HorizontalPadding(24px, 24px);
+  border: 1px solid $primary-color;
+  font-size: 22px;
+  font-weight: weight(light);
+  resize: none;
+
+  &::placeholder {
+    color: #a7a7a7;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  @include tablet {
+    margin-bottom: 17px;
+    @include HorizontalPadding(14px, 14px);
+    font-size: 17px;
+  }
+
+  @include mobile {
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+}
+
 @mixin GeneralbackgroundImage($Repeat, $Size, $xAxisPos, $yAxisPos) {
   background-repeat: $Repeat;
   background-size: $Size;
@@ -262,4 +348,3 @@
   width: $width;
   height: $height;
 }
-

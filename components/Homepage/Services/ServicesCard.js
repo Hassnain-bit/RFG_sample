@@ -15,7 +15,7 @@ function ServicesCard(props) {
       <div className="col-lg-4 col-md-6" key={id}>
         <div className={styles.sc_item}>
           <Image
-            alt="truck-icon"
+            alt="services-icon"
             src={icon}
             layout="fixed"
             objectFit="cover"

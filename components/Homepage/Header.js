@@ -59,6 +59,8 @@ function Header() {
           containerClass={styles.carousel_container}
           infinite={true}
           showDots={true}
+          autoPlay={true}
+          autoPlaySpeed={4000}
         >
           <CarouselItem image={"/../public/images/carousal_img_1.png"}/>
           <CarouselItem image={"/../public/images/carousal_img_2.png"}/>
