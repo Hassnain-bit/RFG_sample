@@ -12,7 +12,6 @@ function Navbar() {
 
   const [select, setSelect] = useState("US");
   const onSelect = (code) => setSelect(code);
-  console.log("SELECT", select);
 
   return (
     <>
@@ -47,6 +46,7 @@ function Navbar() {
                     className={styles.D_lang}
                     selected={select}
                     onSelect={onSelect}
+                    placeholder={"English"}
                     selectedSize={"14px"}
                     optionsSize={"14px"}
                     countries={["US", "GB", "FR", "DE", "IT"]}
@@ -136,9 +136,10 @@ function Navbar() {
 
               <div className={styles.buttons}>
                 <ReactFlagsSelect
-                  className={styles.D_lang}
+                  className={styles.T_lang}
                   selected={select}
                   onSelect={onSelect}
+                  placeholder={"English"}
                   selectedSize={"11px"}
                   optionsSize={"11px"}
                   countries={["US", "GB", "FR", "DE", "IT"]}

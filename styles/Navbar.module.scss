@@ -41,6 +41,7 @@
             cursor: pointer;
             &:hover {
               text-decoration: underline;
+              color: $primary-color;
             }
           }
         }
@@ -74,6 +75,7 @@
             font-size: 14px;
             font-weight: weight(medium);
             height: 40px;
+            color: $primary-color;
             background-color: $white-color;
             border: 1px solid $primary-color;
             box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
@@ -192,7 +194,7 @@
           grid-gap: 25px;
         }
 
-        .D_lang {
+        .T_lang {
           padding-bottom: 0;
           button {
             border-radius: 10px;
@@ -201,6 +203,7 @@
             padding: 5px 11px 5px 8px;
             @include VerticalPadding(5px, 5px);
             @include HorizontalPadding(11px, 8px);
+            color: $primary-color;
             background-color: $white-color;
             border: 1px solid $primary-color;
             box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
