@@ -41,6 +41,14 @@
           transform: translateY(-50px);
           border-bottom: 8px solid $primary-color;
           transition: all 0.3s ease;
+
+          @include tablet {
+            transform: translateY(-25px);
+          }
+        }
+
+        @include desktop{
+          height: 650px;
         }
 
         @include tablet {

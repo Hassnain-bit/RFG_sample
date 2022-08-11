@@ -67,6 +67,11 @@ $font-weight: (
   $customMobileBp:450px;
   $customMobileBp:280px;
 
+  @mixin desktop {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
 
   @mixin tablet {
     @media only screen and (max-width: 992px) {
@@ -76,6 +81,18 @@ $font-weight: (
 
   @mixin mobile {
     @media only screen and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @mixin s-mobile {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @mixin c-mobile {
+    @media only screen and (max-width: 431px) {
       @content;
     }
   }

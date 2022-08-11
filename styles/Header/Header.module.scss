@@ -40,14 +40,15 @@
             text-align: left;
 
             @include tablet {
-              max-width: 544px;
               margin: 0 auto;
               text-align: center;
+              @include HorizontalPadding(26px, 26px);
             }
 
             @include mobile {
               width: 100%;
-              max-width: none
+              max-width: 460px;
+              @include HorizontalPadding(15px, 15px);
             }
 
             h1 {

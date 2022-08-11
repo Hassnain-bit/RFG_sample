@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styles from "../../styles/Navbar.module.scss";
 import { useRouter } from "next/router";
+import ReactFlagsSelect from "react-flags-select";
 
 function Navbar() {
   const router = useRouter();
@@ -9,14 +10,9 @@ function Navbar() {
   // OPEN SIDEBAR
   const [openNav, setOpenNav] = useState(false);
 
-  const TopDetail = (props) => {
-    return (
-      <div className={styles.tdl_item}>
-        <h6>{props.title}</h6>
-        <a>{props.detail}</a>
-      </div>
-    );
-  };
+  const [select, setSelect] = useState("US");
+  const onSelect = (code) => setSelect(code);
+  console.log("SELECT", select);
 
   return (
     <>
@@ -25,25 +21,53 @@ function Navbar() {
           <div className="container" style={{ height: "100%" }}>
             <div className={styles.td_inner}>
               <div className={styles.td_left}>
-                <TopDetail
-                  title={"Address"}
-                  detail={"International City, Dubai"}
-                />
-                <TopDetail
-                  title={"Email Us"}
-                  detail={"Support@rfglogistics.ae"}
-                />
-                <TopDetail title={"Phone Number"} detail={"+971 50 0000 001"} />
+                <div className={styles.tdl_item}>
+                  <h6>Address</h6>
+                  <a
+                    href="https://goo.gl/maps/zRXUhWNEqFnXiX1x7"
+                    target="_blank"
+                  >
+                    International City, Dubai
+                  </a>
+                </div>
+                <div className={styles.tdl_item}>
+                  <h6>Email Us</h6>
+                  <a href="mailto:handycrewts@gmail.com">
+                    Support@rfglogistics.ae
+                  </a>
+                </div>
+                <div className={styles.tdl_item}>
+                  <h6>Phone Number</h6>
+                  <a href="tel:+971500000001">+971 50 0000 001</a>
+                </div>
               </div>
               <div>
                 <div className={styles.td_right}>
-                  <select class="form-select">
-                    <option selected>English</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                  <button type="button" className="btn">
+                  <ReactFlagsSelect
+                    className={styles.D_lang}
+                    selected={select}
+                    onSelect={onSelect}
+                    selectedSize={"14px"}
+                    optionsSize={"14px"}
+                    countries={["US", "GB", "FR", "DE", "IT"]}
+                    customLabels={{
+                      US: "English",
+                      GB: "EN-GB",
+                      FR: "FR",
+                      DE: "DE",
+                      IT: "IT",
+                    }}
+                    /*showSelectedLabel={showSelectedLabel}
+        showOptionLabel={showOptionLabel}
+        optionsSize={optionsSize}
+        placeholder={placeholder}
+        searchable={searchable}
+        searchPlaceholder={searchPlaceholder}
+        alignOptionsToRight={alignOptionsToRight}
+        fullWidth={fullWidth}
+        disabled={disabled} */
+                  />
+                  <button type="button" className={styles.D_quote_btn}>
                     Request a Quote
                   </button>
                 </div>
@@ -86,20 +110,56 @@ function Navbar() {
                   >
                     About us
                   </li>
-                  <li>Services</li>
-                  <li>Contact us</li>
+                  <li
+                    className={
+                      router.asPath == "/services" ? `${styles.active}` : ""
+                    }
+                    onClick={() =>
+                      router.push("/services") && setOpenNav(!openNav)
+                    }
+                  >
+                    Services
+                  </li>
+                  <li
+                    className={
+                      router.asPath == "/contact" ? `${styles.active}` : ""
+                    }
+                    onClick={() =>
+                      router.push("/contact") && setOpenNav(!openNav)
+                    }
+                  >
+                    Contact us
+                  </li>
                 </ul>
                 <div className={styles.l_quote}>Request Quote</div>
               </div>
 
               <div className={styles.buttons}>
-                <select class="form-select">
-                  <option selected>English</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-                <button type="button" className="btn">
+                <ReactFlagsSelect
+                  className={styles.D_lang}
+                  selected={select}
+                  onSelect={onSelect}
+                  selectedSize={"11px"}
+                  optionsSize={"11px"}
+                  countries={["US", "GB", "FR", "DE", "IT"]}
+                  customLabels={{
+                    US: "English",
+                    GB: "EN-GB",
+                    FR: "FR",
+                    DE: "DE",
+                    IT: "IT",
+                  }}
+                  /*showSelectedLabel={showSelectedLabel}
+        showOptionLabel={showOptionLabel}
+        optionsSize={optionsSize}
+        placeholder={placeholder}
+        searchable={searchable}
+        searchPlaceholder={searchPlaceholder}
+        alignOptionsToRight={alignOptionsToRight}
+        fullWidth={fullWidth}
+        disabled={disabled} */
+                />
+                <button type="button" className={styles.T_quote_btn}>
                   Request a Quote
                 </button>
               </div>
