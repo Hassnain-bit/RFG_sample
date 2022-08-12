@@ -1,20 +1,17 @@
 import React from "react";
 import styles from "../../../styles/Special.module.scss";
 import Image from "next/image";
-import iconMax from '../../../assets/images/mission_icon.png';
 
 function SpecialItem(props) {
-  const { id, icon, title, desc } = props.data;
-
   return (
     <>
-      <div className="col-md-6" key={id}>
+      <div className="col-md-6">
         <div className={styles.sc_item}>
           <div className={styles.sc_icon_holder}>
             <div className={styles.sc_icon}>
               <Image
-                alt="men_img"
-                src={iconMax}
+                alt="special_icon"
+                src={props.icon}
                 layout="fixed"
                 width={36}
                 height={36}
@@ -22,8 +19,8 @@ function SpecialItem(props) {
             </div>
           </div>
           <div className={styles.sc_text}>
-            <h6>{title}</h6>
-            <p>{desc}</p>
+            <h6>{props.title}</h6>
+            <p>{props.desc}</p>
           </div>
         </div>
       </div>
