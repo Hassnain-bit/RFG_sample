@@ -4,6 +4,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 import carouselImg1 from '../../assets/images/carousal_img_1.png';
+import carouselImg2 from '../../assets/images/carousal_img_2.png';
+import carouselImg3 from '../../assets/images/carousal_img_3.png';
 
 function Header() {
   const responsive = {
@@ -64,8 +66,8 @@ function Header() {
           autoPlaySpeed={4000}
         >
           <CarouselItem image={carouselImg1}/>
-          <CarouselItem image={"/../public/images/carousal_img_2.png"}/>
-          <CarouselItem image={"/../public/images/carousal_img_3.png"}/>
+          <CarouselItem image={carouselImg2}/>
+          <CarouselItem image={carouselImg3}/>
         </Carousel>
       </div>
     </>
