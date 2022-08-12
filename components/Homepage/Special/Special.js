@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../../styles/Special.module.scss";
 import GeneralHeading from "../../Common/GeneralHeading";
 import Image from "next/image";
-import { SpecialData } from "./SpecialData";
+import MenImg from "../../../assets/images/men_img.png";
 import SpecialItem from "./SpecialItem";
 import MissionIcon from "../../../assets/images/mission_icon.png";
 import CommitementIcon from "../../../assets/images/commitement_icon.png";
@@ -24,7 +24,7 @@ function Special() {
               <div className={styles.s_men_img}>
                 <Image
                   alt="men_img"
-                  src="/../public/images/men_img.png"
+                  src={MenImg}
                   layout="responsive"
                   width={307}
                   height={499}

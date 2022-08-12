@@ -1,10 +1,9 @@
-// import missionIcon from '../../../assets/images/mission_icon.png';
-import missionIcon from '../../../public/images/mission_icon.png';
+
 
 export const SpecialData = [
     {
       id: 1,
-      icon: "/../assets/images/mission_icon.png",
+      icon: "/../public/images/mission_icon.png",
       title: "Mission",
       desc: "We transport permitted good on land with in GCC and MENA region countries safely and sustainably.",
     },
