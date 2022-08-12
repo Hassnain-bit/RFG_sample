@@ -52,7 +52,7 @@
         }
 
         @include tablet {
-          height: 480px;
+          height: 510px;
         }
         @include mobile {
           height: auto;
@@ -100,6 +100,10 @@
             margin-left: 5px;
             color: rgb(0 0 205 / 54%);
             cursor: pointer;
+
+            &:hover{
+              text-decoration: underline;
+            }
           }
         }
       }

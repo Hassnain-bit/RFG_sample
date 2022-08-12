@@ -225,7 +225,7 @@
             span {
               span {
                 &:last-child {
-                  @include mobile {
+                  @include tablet{
                     text-overflow: unset;
                     max-width: 30px;
                   }
